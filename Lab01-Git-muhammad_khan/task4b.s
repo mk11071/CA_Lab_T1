@@ -9,16 +9,25 @@ lh x4, 0x200(x0)
 add x5, x1, x4
 sw x5, 0x300(x0)
 
+addi x2, x2,8
+addi x3, x3, 16
+addi x6, x6, 32
 lb x1, 0x100(x2)
 lh x4, 0x200(x3)
 add x5, x1, x4
 sw x5, 0x300(x6)
 
+addi x2, x2,8
+addi x3, x3, 16
+addi x6, x6, 32
 lb x1, 0x100(x2)
 lh x4, 0x200(x3)
 add x5, x1, x4
 sw x5, 0x300(x6)
 
+addi x2, x2,8
+addi x3, x3, 16
+addi x6, x6, 32
 lb x1, 0x100(x2)
 lh x4, 0x200(x3)
 add x5, x1, x4
