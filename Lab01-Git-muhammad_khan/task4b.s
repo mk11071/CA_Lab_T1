@@ -35,4 +35,6 @@ lb  x1, 0x103(x0)
 lh  x2, 0x206(x0)      
 add x3, x1, x2        
 sw  x3, 0x30C(x0)    
-addi x4, x0,1
+
+end:
+    j end
