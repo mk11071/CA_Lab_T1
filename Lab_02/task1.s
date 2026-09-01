@@ -4,4 +4,5 @@ beq x0, x0, Exit
 Else:
     sub x19, x20, x21
 Exit:
-    #code after if/else goes here
+    add x0,x0,x0
+
