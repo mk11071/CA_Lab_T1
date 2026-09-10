@@ -1,5 +1,7 @@
 li x7, 0
-
+li x5, 10
+li x6, 5
+li x10, 0x100
 outer_loop:
     li x29, 0
     bge x7, x5, exit        
@@ -19,4 +21,4 @@ increment_outer:
     beq x0, x0, outer_loop
 
 exit:
-    add x0, x0, x0
+    j exit

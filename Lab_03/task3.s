@@ -1,22 +1,37 @@
-li x10, 0x200
-li x11, 7
-li x1,9
-li x2,
-sw x1,28(x10)
-sw x2,32(x10)
-slli x11,x11,2
+
+addi x10,x10,0x100
+li x9,6
+li x12,9
+sw x9,0(x10)
+sw x12,4(x10)
+li x20,0
+li x11,0
 jal x1, swap
+end:
+    j end
+ swap:
+    slli x6, x11, 2 
+    add  x6, x10, x6    
+    lw   x5, 0(x6)      
+    lw   x7, 4(x6)      
+    sw   x7, 0(x6)       
+    sw   x5, 4(x6)       
+    jalr x0, 0(x1)      
 
 
-j exit
 
 
-swap:
-    add x12,x10,x11
-    lw x14,0(x12)
-    lw x13,4(x12)
-    sw x14, 4(x12 )
-    sw x13, 0(x12)
-    jalr x0, 0(x1)
-exit:
-    add x0,x0,x0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
