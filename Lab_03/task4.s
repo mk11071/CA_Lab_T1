@@ -7,27 +7,26 @@ jal x1, strcpy
 end:
  j end
 strcpy:
-    addi sp,sp,-16
+    addi sp,sp,-16      #making space for arguments/register values
     sw x10,12(sp)
     sw x11,8(sp)
     sw x19,4(sp)
     sw x3,0(sp)
     li x19,0
-    li x10,0x100
+    li x10,0x100    #base adresses of our strings
     li x11,0x200
     not_null:
         add x19,x19,x11
-        lb x3,0(x19)
-        
+        lb x3,0(x19)    #loading byte from first string
         sub x19,x19,x11
-        add x19,x19,x10
-        sb x3,0(x19)
+        add x19,x19,x10 
+        sb x3,0(x19)    #storing into other string
         beq x3,x0, exit
         sub x19,x19,x10
         addi x19,x19,1
         beq x0,x0, not_null
     exit:
-        lw x3,0(sp)
+        lw x3,0(sp) #loading previous values from stack to registers
         lw x19,4(sp)
         lw x11,8(sp)
         lw x10,12(sp)
